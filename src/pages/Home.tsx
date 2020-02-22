@@ -1,6 +1,4 @@
 import * as React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
 import styled from 'styled-components'
 
 const Contents = styled.div`
@@ -12,9 +10,7 @@ const Contents = styled.div`
 
 const Home: React.FC = () => (
   <div>
-    <Header />
     <Contents>Contents</Contents>
-    <Footer />
   </div>
 )
 
