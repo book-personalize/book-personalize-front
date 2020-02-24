@@ -9,7 +9,7 @@ export const Container = styled.header`
   z-index: 99;
   width: 100%;
   height: 64px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(#fff, 0.3);
   box-sizing: border-box;
 `
 
