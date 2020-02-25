@@ -1,11 +1,16 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
+import { ConfigProvider } from 'antd'
+import koKR from 'antd/es/locale/ko_KR'
+
 import App from './App'
 
 const Root = () => (
     <BrowserRouter>
-      <App/>
+      <ConfigProvider locale={koKR}>
+        <App/>
+      </ConfigProvider>
     </BrowserRouter>
 );
 
