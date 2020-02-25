@@ -1,0 +1,5 @@
+export { default as Add } from './Add'
+export { default as Detail } from './Detail'
+export { default as Home } from './Home'
+export { default as Books } from './Books'
+export { default as Profile } from './Profile'
