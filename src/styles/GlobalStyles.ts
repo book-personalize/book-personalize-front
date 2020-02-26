@@ -7,8 +7,9 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background-color: #fafafa;
     color: rgba(#000, 0.87);
+    background-color: #fff;
     font-size: 14px;
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans KR', 'Sans-serif';
   }
 ;`
