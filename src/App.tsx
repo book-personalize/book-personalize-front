@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 
 const Contents = styled.div`
   min-height: 100vh;
+  padding-top: 64px;
 `
 
 const App: React.FC = () => {
