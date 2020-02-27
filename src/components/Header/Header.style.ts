@@ -20,11 +20,10 @@ export const InnerContainer = styled.div`
   height: 100%;
 `
 
-export const Link = styled.a`
+export const Menu = styled.div`
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
-  text-decoration: none;
 `
 
 export const Divider = styled.div`

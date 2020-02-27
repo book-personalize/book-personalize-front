@@ -12,7 +12,7 @@ export interface IProps {
   onChange (e: React.FormEvent): void;
 }
 
-const Input: React.FC<IProps> = ({ id, type = 'text', size = 'default', value, placeholder, suffix, disabled = false, onChange }) => (
+const Input: React.FC<IProps> = ({ id, type = 'text', size = 'large', value, placeholder, suffix, disabled = false, onChange }) => (
   <InputComponent
     id={id}
     type={type}

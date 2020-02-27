@@ -1,25 +1,28 @@
 import * as React from 'react';
 
-import { ButtonComponent } from './Button.style';
+import { Button as ButtonComponent } from 'antd';
 
 export interface IProps {
-  color?: 'primary' | 'default';
-  fontSize?: string;
+  type?: 'primary' | 'ghost' | 'danger' | 'default';
+  size?: 'small' | 'large' | 'default';
+  shape?: 'circle' | 'round' | '';
   label: string;
-  disabled: boolean;
-  loading: boolean;
+  disabled?: boolean;
+  loading?: boolean;
+  block?: boolean;
   onClick (e: React.MouseEvent<HTMLElement, MouseEvent>): void;
 }
 
-const Button: React.FC<IProps> = ({ color, fontSize, disabled, loading, label, onClick }) => (
+const Button: React.FC<IProps> = ({ type = 'primary', size = 'large', label, disabled = false, loading = false, block = true, onClick }) => (
   <ButtonComponent
-    color={color}
-    fontSize={fontSize}
+    type={type}
+    size={size}
     disabled={disabled}
     loading={loading}
     onClick={(e) => onClick(e)}
+    block={block}
   >
-    {label}
+    { label }
   </ButtonComponent>
 );
 

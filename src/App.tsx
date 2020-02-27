@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import GlobalStyles from './styles/GlobalStyles'
 import styled from 'styled-components'
@@ -20,12 +20,14 @@ const App: React.FC = () => {
         <Header />
           <Contents>
             <Route exact path="/" component={Home}/>
-            <Route exact path="/add" component={Add}/>
-            <Route exact path="/books/1" component={Detail}/>
-            <Route exact path="/books" component={Books}/>
-            <Route exact path="/profile" component={Profile}/>
-            <Route exact path="/join" component={Join}/>
-            <Route exact path="/login" component={Login}/>
+            <Switch>
+              <Route path="/profile" component={Profile}/>
+              <Route path="/join" component={Join}/>
+              <Route path="/login" component={Login}/>
+              <Route path="/add" component={Add}/>
+              <Route path="/books/:key" component={Detail}/>
+              <Route path="/books" component={Books}/>
+            </Switch>
           </Contents>
         <Footer />
       </div>
