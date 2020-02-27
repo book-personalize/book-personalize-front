@@ -11,8 +11,8 @@ export const ButtonComponent = styled.button`
   text-align: center;
   color: #ffffff;
   background-color: #0077c7;
-  color: ${props => props.color === 'primary' ? '#ffffff' : '#0077c7'};
-  background: ${props => props.color === 'primary' ? '#0077c7' : '#ffffff'};
+  color: ${({ color }) => color === 'primary' ? '#ffffff' : '#0077c7'};
+  background: ${({ color }) => color === 'primary' ? '#0077c7' : '#ffffff'};
   cursor: pointer;
   &:hover {
     background-color: rgba(0, 119, 199, 1);

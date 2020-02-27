@@ -44,9 +44,9 @@ const onInputPassword = () => ({
 const Login: React.FC = () => (
   <LoginContainer>
     <Divider>
-      <div className="line"></div>
+      <div className="line" />
       <p className="text">또는</p>
-      <div className="line"></div>
+      <div className="line" />
     </Divider>
     <Label>이메일</Label>
     <Input id="email" placeholder="ID@example.com" onChange={onInputEmail}/>

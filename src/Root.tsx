@@ -3,7 +3,6 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { ConfigProvider } from 'antd'
 import koKR from 'antd/es/locale/ko_KR'
-import 'antd/dist/antd.css'
 
 import App from './App'
 
