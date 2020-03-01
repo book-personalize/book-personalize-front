@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -61,45 +61,62 @@ const CheckboxWrapper = styled.div`
   margin-bottom: 16px;
 `
 
-const onInputEmail = () => ({
+const Login: React.FC = () => {
+  const onCheckSaveID = () => ({})
 
-})
+  const [form, setForm] = useState({
+    email: '',
+    password: ''
+  })
+  const { email, password } = form
 
-const onInputPassword = () => ({
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const { id, value } = e.target
+    setForm({
+      ...form,
+      [id]: value
+    })
+  }
 
-})
+  const validation = (): boolean => {
+    if (email === '' || password === '') {
+      alert('이메일과 비밀번호를 입력해주세요.')
+      return false
+    }
+    return true
+  }
 
-const onSubmit = () => ({
+  const onSubmit = async (e: React.MouseEvent<HTMLElement, MouseEvent>): Promise<void> => {
+    e.preventDefault()
+    if (!validation()) {
+      return
+    }
+  }
 
-})
-
-const onCheckSaveID = () => ({
-
-})
-
-const Login: React.FC = () => (
-  <LoginContainer>
-    <Button label="페이스북으로 로그인" disabled={false} loading={false} onClick={onSubmit} />
-    <Button label="구글로 로그인" disabled={false} loading={false} onClick={onSubmit} />
-    <Divider>
-      <hr className="line" />
-      <span className="text">또는</span>
-      <hr className="line" />
-    </Divider>
-    <Label>이메일</Label>
-    <Input id="email" placeholder="ID@example.com" onChange={onInputEmail}/>
-    <Label>비밀번호</Label>
-    <Input id="password" placeholder="비밀번호를 입력해주세요." onChange={onInputPassword}/>
-    <CheckboxWrapper>
-      <Checkbox label="로그인 상태 유지"  onChange={onCheckSaveID}/>
-      <Label>비밀번호 찾기</Label>
-    </CheckboxWrapper>
-    <Button label="로그인" disabled={false} loading={false} onClick={onSubmit} />
-    <Guide>
-      아직 북, 한 사람 회원이 아니신가요? &nbsp;
-      <Link to="/join">회원가입</Link>
-    </Guide>
+  return (
+    <LoginContainer>
+      <Button label="페이스북으로 로그인" disabled={false} loading={false} onClick={onSubmit}/>
+      <Button label="구글로 로그인" disabled={false} loading={false} onClick={onSubmit}/>
+      <Divider>
+        <hr className="line"/>
+        <span className="text">또는</span>
+        <hr className="line"/>
+      </Divider>
+      <Label>이메일</Label>
+      <Input id="email" placeholder="ID@example.com" value={email} onChange={onChange}/>
+      <Label>비밀번호</Label>
+      <Input id="password" type="password" placeholder="비밀번호를 입력해주세요." value={password} onChange={onChange}/>
+      <CheckboxWrapper>
+        <Checkbox label="로그인 상태 유지" onChange={onCheckSaveID}/>
+        <Label>비밀번호 찾기</Label>
+      </CheckboxWrapper>
+      <Button label="로그인" disabled={false} loading={false} onClick={onSubmit}/>
+      <Guide>
+        아직 북, 한 사람 회원이 아니신가요? &nbsp;
+        <Link to="/join">회원가입</Link>
+      </Guide>
   </LoginContainer>
-)
+  )
+}
 
 export default Login

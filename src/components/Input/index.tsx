@@ -21,7 +21,7 @@ const Input: React.FC<IProps> = ({ id, type = 'text', size = 'large', value, pla
     placeholder={placeholder}
     suffix={suffix}
     disabled={disabled}
-    onChange={(e: React.FormEvent) => onChange(e)}
+    onChange={onChange}
   />
 )
 

@@ -8,7 +8,7 @@ const PageTemplateWrapper = styled.div``
 
 const Contents = styled.div`
   min-height: 100vh;
-  padding-top: 64px;
+  padding: 64px 0;
 `
 
 const PageTemplate: React.FC = ({ children }) => (
