@@ -6,7 +6,6 @@ export interface IProps {
   label?: string;
   checked?: boolean;
   disabled?: boolean;
-
   onChange (e: CheckboxChangeEvent): void;
 }
 
@@ -14,7 +13,7 @@ const Checkbox: React.FC<IProps> = ({ label = '', checked = false, disabled = fa
   <CheckboxComponent
     checked={checked}
     disabled={disabled}
-    onChange={(e: CheckboxChangeEvent) => onChange(e)}
+    onChange={onChange}
   >
     { label }
   </CheckboxComponent>

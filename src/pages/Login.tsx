@@ -13,10 +13,7 @@ const LoginContainer = styled.div`
   height: 100%;
   margin: 64px auto;
   padding: 32px;
-  box-sizing: border-box;
-  border: 1px solid #dee2e6;
-  border-radius: 2px;
-  
+  ${({ theme }) => theme.whiteBox}
   input {
     margin: 8px 0 16px;
   }
@@ -115,7 +112,7 @@ const Login: React.FC = () => {
         아직 북, 한 사람 회원이 아니신가요? &nbsp;
         <Link to="/join">회원가입</Link>
       </Guide>
-  </LoginContainer>
+    </LoginContainer>
   )
 }
 
