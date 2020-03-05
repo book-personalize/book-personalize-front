@@ -30,6 +30,7 @@ const Add: React.FC = () => {
 
   return (
     <AddContainer>
+
       <Label>책 이름</Label>
       <StyledInput id="email" placeholder="책 이름을 입력해주세요." onChange={onChange}/>
       <Label>책 저자</Label>
