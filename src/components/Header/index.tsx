@@ -1,23 +1,41 @@
-import * as React from 'react'
+import React, { useCallback } from 'react'
+import { useHistory } from 'react-router-dom'
 
-import { Container, Divider, Logo, MenuItems, InnerContainer, Menu } from './Header.style'
-import { Link } from 'react-router-dom'
+import InputSearch from '../Input/InputSearch'
+import { HeaderContainer, Divider, Logo, MenuItems, InnerContainer, Menu } from './Header.style'
+import Emoji from '../Emoji'
 
-const Index: React.FC = () => (
-  <Container>
-    <InnerContainer>
-      <Logo/>
-      <MenuItems>
-        <Menu>
-          <Link to="/login">로그인</Link>
-        </Menu>
-        <Divider />
-        <Menu>
-          <Link to="/join">회원가입</Link>
-        </Menu>
-      </MenuItems>
-    </InnerContainer>
-  </Container>
-)
+const Header: React.FC = () => {
+  const history = useHistory()
 
-export default Index
+  const toHome = useCallback(() => {
+    history.push('/')
+  }, [history])
+
+  const onSearch = (value: string) => {
+    console.log(value)
+  }
+
+  const onChange = (e: any) => {
+    console.log(e.target.value)
+  }
+
+  return (
+    <HeaderContainer>
+      <InnerContainer>
+        <Logo onClick={toHome}>
+          <Emoji label="book" symbol="📖"/>
+          &nbsp;Book Person
+        </Logo>
+        <MenuItems>
+          <InputSearch id="search" onSearch={onSearch} onChange={onChange}/>
+          <Menu to="/login">로그인</Menu>
+          <Divider />
+          <Menu to="/join">회원가입</Menu>
+        </MenuItems>
+      </InnerContainer>
+    </HeaderContainer>
+  )
+}
+
+export default Header
