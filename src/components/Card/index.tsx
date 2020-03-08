@@ -1,9 +1,18 @@
 import * as React from 'react'
 
-import { CardContainer } from './Card.style'
+import { CardContainer, Image, Title, Author } from './Card.style'
 
-const Card: React.FC = () => (
+interface IProps {
+  title: string;
+  author: string;
+  img: string;
+}
+
+const Card: React.FC<IProps> = ({ title, author, img }) => (
   <CardContainer>
+    <Image src={img} alt={title} />
+    <Title>{ title }</Title>
+    <Author>{ author }</Author>
   </CardContainer>
 )
 

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Input as InputComponent } from 'antd'
 
-export interface IProps {
+interface IProps {
   id: string;
   type?: string;
   size?: 'large' | 'default' | 'small';
