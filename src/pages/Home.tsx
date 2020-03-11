@@ -1,6 +1,5 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import SectionBg from '../components/Home/SectionBg'
 import Card from '../components/Card/index'
 
 const Container = styled.div`
@@ -25,7 +24,6 @@ const elements = ['one', 'two', 'three']
 
 const Home: React.FC = () => (
   <Container>
-    <SectionBg />
     <InnerContainer>
       <div className="card-list">
         {elements.map((value, index) => {
