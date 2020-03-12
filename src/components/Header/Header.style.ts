@@ -10,7 +10,7 @@ export const HeaderContainer = styled.header`
   z-index: 99;
   width: 100%;
   height: 64px;
-  background-color: rgba(#fff, 0.3);
+  background-color: rgba(255, 255, 255, 0.9);
   box-sizing: border-box;
   border-bottom: solid 1px ${({ theme }) => theme.lightGreyColor};
 `

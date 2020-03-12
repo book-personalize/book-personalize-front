@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Card from '../components/Card/index'
 
@@ -26,8 +26,8 @@ const Home: React.FC = () => (
   <Container>
     <InnerContainer>
       <div className="card-list">
-        {elements.map((value, index) => {
-          return <Card key={index} />
+        {elements.map((item, index) => {
+          return <Card title="" author="" img=""/>
         })}
       </div>
     </InnerContainer>

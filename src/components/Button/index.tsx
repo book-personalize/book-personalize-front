@@ -26,4 +26,4 @@ const Button: React.FC<IProps> = ({ type = 'primary', size = 'large', label, dis
   </ButtonComponent>
 );
 
-export default Button;
+export default Button
