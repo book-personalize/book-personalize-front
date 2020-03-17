@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { Button as ButtonComponent } from 'antd';
 
@@ -10,7 +10,7 @@ export interface IProps {
   disabled?: boolean;
   loading?: boolean;
   block?: boolean;
-  onClick (e: React.MouseEvent<HTMLElement, MouseEvent>): void;
+  onClick(e: React.MouseEvent<HTMLElement, MouseEvent>): void;
 }
 
 const Button: React.FC<IProps> = ({ type = 'primary', size = 'large', label, disabled = false, loading = false, block = true, onClick }) => (
@@ -22,7 +22,7 @@ const Button: React.FC<IProps> = ({ type = 'primary', size = 'large', label, dis
     onClick={(e) => onClick(e)}
     block={block}
   >
-    { label }
+    {label}
   </ButtonComponent>
 );
 

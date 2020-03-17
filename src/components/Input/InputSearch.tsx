@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Input as InputComponent } from 'antd'
+import React from 'react'
+import { Input, AutoComplete } from 'antd'
 import styled from 'styled-components'
 
 export interface IProps {
@@ -10,7 +10,7 @@ export interface IProps {
   onChange (e: React.FormEvent): void;
 }
 
-const StyledSearch = styled(InputComponent.Search)`
+const StyledSearch = styled(Input.Search)`
   width: 300px;
   input {
     border: 0 none;
@@ -21,13 +21,17 @@ const StyledSearch = styled(InputComponent.Search)`
 
 const InputSearch: React.FC<IProps> = ({ id, size = 'large', placeholder, onChange, onSearch }) => {
   return (
-    <StyledSearch
-      id={id}
-      size={size}
-      placeholder={placeholder}
-      onSearch={onSearch}
-      onChange={onChange}
-    />
+    <AutoComplete
+      style={{ width: 200 }}
+    >
+      <StyledSearch
+        id={id}
+        size={size}
+        placeholder={placeholder}
+        onSearch={onSearch}
+        onChange={onChange}
+      />
+    </AutoComplete>
   )
 }
 
