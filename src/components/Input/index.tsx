@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { Input as InputComponent } from 'antd'
 
 interface IProps {
