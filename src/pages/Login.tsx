@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Icon } from 'antd'
 import styled from 'styled-components'
 
 import Input from '../components/Input/index'
 import Button from '../components/Button'
 import Checkbox from '../components/Checkbox'
+import SocialButton from '../components/Button/Social'
 
 const LoginContainer = styled.div`
   display: flex;
@@ -92,8 +94,14 @@ const Login: React.FC = () => {
 
   return (
     <LoginContainer>
-      <Button label="페이스북으로 로그인" disabled={false} loading={false} onClick={onSubmit}/>
-      <Button label="구글로 로그인" disabled={false} loading={false} onClick={onSubmit}/>
+      <SocialButton onClick={onSubmit}>
+        <Icon type="facebook"/>
+        페이스북으로 로그인
+      </SocialButton>
+      <SocialButton color="white" onClick={onSubmit}>
+        <Icon type="google"/>
+        구글로 로그인
+      </SocialButton>
       <Divider>
         <hr className="line"/>
         <span className="text">또는</span>

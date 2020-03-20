@@ -19,7 +19,7 @@ const Button: React.FC<IProps> = ({ type = 'primary', size = 'large', label, dis
     size={size}
     disabled={disabled}
     loading={loading}
-    onClick={(e) => onClick(e)}
+    onClick={onClick}
     block={block}
   >
     {label}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import { createStore } from 'redux'
+import { combineReducers, createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
@@ -13,6 +13,7 @@ import Theme from './styles/Theme'
 
 import App from './App'
 
+const rootReducer = combineReducers({})
 const store = createStore(rootReducer, composeWithDevTools())
 
 const Root = () => (
