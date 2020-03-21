@@ -1,15 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import BookGrade from '..//BookGrade'
+
 interface IProps {
-  image: string;
-  title: string;
-  author: string;
+  image: string
+  title: string
+  author: string
+  genre: string
 }
 
 const StyledSummary = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 60px;
 `
 
 const Image = styled.img`
@@ -19,23 +23,26 @@ const Image = styled.img`
   margin-right: 32px;
 `
 
-const Contents = styled.div`
-`
-
 const Title = styled.h1`
-
+  font-size: 30px;
+  font-weight: bold;
 `
 
-const SubTitle = styled.p``
+const SubTitle = styled.p`
+  font-size: 16px;
+  margin: 16px 0;
+`
 
-const Summary: React.FC<IProps> = ({ image, title, author }) => {
+const Summary: React.FC<IProps> = ({ image, title = '나는 나로 살기로 했다.', author = '김수현', genre }) => {
   return (
     <StyledSummary>
       <Image src={image}/>
-      <Contents>
+      <div>
+        <SubTitle>{ genre }</SubTitle>
         <Title>{ title }</Title>
-        <SubTitle>{ author }</SubTitle>
-      </Contents>
+        <SubTitle>저자 { author }</SubTitle>
+        <BookGrade grade={4} isShowGrade={true}/>
+      </div>
     </StyledSummary>
   )
 }
