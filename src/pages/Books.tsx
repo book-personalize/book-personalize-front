@@ -12,7 +12,6 @@ const Container = styled.div`
 `
 
 const InnerContainer = styled.div`
-  width: 1100px;
   min-height: calc(100vh - 64px);
   margin: 32px auto 0;
   .card-list {

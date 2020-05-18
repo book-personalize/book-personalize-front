@@ -13,7 +13,7 @@ const App: React.FC = () => {
         <Route path="/profile" component={Profile}/>
         <Route path="/join" component={Join}/>
         <Route path="/login" component={Login}/>
-        <Route path="/add" component={Add}/> 
+        <Route path="/add" component={Add}/>
         <Route path="/books/:key" component={BookDetail}/>
         <Route path="/books" component={Books}/>
       </Switch>

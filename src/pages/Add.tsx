@@ -7,7 +7,6 @@ import styled from 'styled-components'
 const AddContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 480px;
   height: 100%;
   margin: 64px auto;
   padding: 32px;
